@@ -2,21 +2,25 @@ const form = document.getElementById('stock-form');
 const tableBody = document.querySelector('#portfolio tbody');
 let portfolio = [];
 
-const API_KEY = 'YOUR_RAPIDAPI_KEY';  // Replace with your actual key
+const API_KEY = '1c0333cd36msheb6880cafd60546p1ece99jsn5fd93a357b28';  // Replace with your actual key
 
 async function getCurrentPrice(symbol) {
-  const url = `https://yfapi.net/v6/finance/quote?symbols=${symbol}`;
+    const url = `https://yh-finance.p.rapidapi.com/stock/v3/get-summary?symbol=${symbol}&region=US`;
 
-  const response = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'x-api-key': API_KEY
-    }
-  });
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': API_KEY,
+            'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com'
+        }
+    });
 
-  const data = await response.json();
-  return data.quoteResponse.result[0]?.regularMarketPrice || 0;
+    const data = await response.json();
+    console.log(data);
+
+    return data.price?.regularMarketPrice?.raw || 0;
 }
+
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
