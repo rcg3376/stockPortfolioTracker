@@ -1,0 +1,25 @@
+{
+  "name": "stockportfoliotracker",
+  "version": "1.0.0",
+  "description": "Stock Portfolio Tracker",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcg3376/stockPortfolioTracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rcg3376/stockPortfolioTracker/issues"
+  },
+  "homepage": "https://github.com/rcg3376/stockPortfolioTracker#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}
