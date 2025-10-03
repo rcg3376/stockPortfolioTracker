@@ -12,8 +12,9 @@
   <form id="stock-form">
     <input type="text" id="symbol" placeholder="Stock Symbol (e.g., AAPL)" required />
     <input type="number" id="shares" placeholder="Shares" required />
-    <input type="number" id="buyPrice" placeholder="Buy Price" required />
+    <input type="number" id="buyPrice" placeholder="Buy Price" step="0.01" required />
     <button type="submit">Add Stock</button>
+    <button type="button" onclick="manualRefresh()" style="margin-left: 10px;">🔄 Refresh Prices</button>
   </form>
 
   <table id="portfolio">
@@ -24,6 +25,7 @@
         <th>Buy Price</th>
         <th>Current Price</th>
         <th>Gain/Loss</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody></tbody>
